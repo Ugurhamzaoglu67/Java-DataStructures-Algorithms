@@ -14,7 +14,9 @@ public class Main {
         *************************************/
 
         //      RECURSIVE METHOD
-        myrecursiveMethod(5);
+       // myrecursiveMethod(5);
+
+        System.out.println("f(0) : "+f(0));
 
         /*  Oops , n is less than 1
             n values : 1
@@ -58,5 +60,39 @@ public class Main {
             System.out.println("n values : "+n);
         }
     }
+
+
+
+    //***************Recursive sum**********************
+    static int f(int x) {
+        if ( x < 0) {
+            return -1;
+        }
+        if(x == 10){
+            return 10;
+        }
+        System.out.println("x : "+x);
+        return x + f(x+1); // Left Recursive Yapma!!!! sağda kalsın.
+
+    }
+
+    /* MANTIĞI   System.out.println("f(0) : "+f(0));
+    * f(0) : 0 + f(1)
+    * f(1) : 1 + f(2)
+    * f(2) : 2 + f(3)
+    * f(3) : 3 + f(4)
+    *.........  Taki x == 10 olduğunda 10 dönderiyor. yani
+    *
+    *
+    * f(9) : 9 + f(10)    // Burda f(10)'unu zaten biliyoruz alttan. yerine koyarsak => 9 + 10 = 19 olmuş oluyor. f(9) = 19
+    *f(10) : 10     -> f(10) belli o halde geriye doğru değerleri koyalım.
+    *
+    * (!) ŞARTLAR İSE ŞÖYLE OLMALI :
+    * 1 - Bitiş koşulu olmalı. Döngülerdeki gibi
+    * 2 - Adım değeri olmalı, Sonsuz döngüye girmemsi için
+    *
+    * Not -> Bazı projelerde kullanımı yasaktır. Callback Stack'lerinin güvenlik açığından.
+    *
+    * */
 
 }
